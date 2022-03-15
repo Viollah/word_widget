@@ -22,7 +22,7 @@ body {
     border: 5px solid lightblue;
 }
 
-.wordSentence {
+.sentence {
     font-size: 1em;
     width: 12em;
     padding: 0.5em;
@@ -32,6 +32,6 @@ body {
     margin-top: 50px;
     padding: 20px;
 }
-.countWords{
+.wordCount{
     font-size: 2em;
 }
