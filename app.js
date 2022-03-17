@@ -3,41 +3,44 @@ const wordCountElem = document.querySelector(".wordCount");
 const submitBtnElem = document.querySelector('.submitBtn');
 const showSentenceElem = document.querySelector('.showSentence');
 const hideElem = document.querySelector('#hide');
+const wordLengthElem = document.querySelector('.wordLength');
+const checkboxElem = document.getElementById('checkbox');
+const shortWordsElem = document.querySelector('.shortWords');
 
 
-
-sentenceElem.addEventListener("keyup",()=>{
-   const wordCount = wordCounter(sentenceElem.value);
-   wordCountElem.innerHTML = wordCount;
+sentenceElem.addEventListener("keyup", () => {
+    const wordCount = wordCounter(sentenceElem.value);
+    wordCountElem.innerHTML = wordCount;
 })
 
-let wordSelection = wordWidget(); 
+let wordSelection = wordWidget();
 
-const submitSentence = ()=>{
-    
-    const newWords = sentenceElem.value;
-    if(newWords){
-      
-        showSentenceElem.innerHTML = wordSelection.newWord(newWords);
-    }
-  
-    let submittedWords = newWords.split(" ");
-    
+const submitSentence = () => {
 
     let highlighted = '';
-    
-        for (let i = 0; i < submittedWords.length; i++) {
-            const hightlightWord = submittedWords[i];
-            if(hightlightWord.length>4){
-                highlighted += `<mark style= 'color:black'>${hightlightWord} </mark> `
 
-            }else{
-                highlighted +=  hightlightWord + ' ';
-            }
+    const newWords = sentenceElem.value;
 
-            showSentenceElem.innerHTML = highlighted;
-           
-            
+    if (newWords) {
+        showSentenceElem.innerHTML = wordSelection.newWord(newWords);
+    }
+
+    let submittedWords = newWords.split(" ");
+
+    for (let i = 0; i < submittedWords.length; i++) {
+        const hightlightWord = submittedWords[i];
+
+        if (hightlightWord.length > 4) {
+            highlighted += `<mark style= 'color:black'>${hightlightWord} </mark> `
+        }
+
+        else {
+            highlighted += hightlightWord + ' ';
+        }
+
+        showSentenceElem.innerHTML = highlighted;
+
+
     }
 
 }
@@ -47,32 +50,32 @@ submitBtnElem.addEventListener('click', submitSentence);
 
 //checkbox 
 
-hide.addEventListener('click',()=>{
+hide.addEventListener('click', () => {
     const newWords = sentenceElem.value;
-    if(newWords){
-      
+    if (newWords) {
+
         showSentenceElem.innerHTML = wordSelection.newWord(newWords);
     }
-  
+
     let submittedWords = newWords.split(" ");
-    
+
 
     let highlighted = '';
-    
-        for (let i = 0; i < submittedWords.length; i++) {
-            const hightlightWord = submittedWords[i];
-            if(hightlightWord.length<5){
-                highlighted += `<mark style= 'color:black'>${hightlightWord} </mark> `
-               
-            }else{
-                highlighted += ' ';
-            }
 
-            showSentenceElem.innerHTML = hightlightWord;
-           
-            
+    for (let i = 0; i < submittedWords.length; i++) {
+        const hightlightWord = submittedWords[i];
+        if (hightlightWord.length >= 5) {
+            highlighted += `<mark style= 'color:black'>${hightlightWord} </mark> `
+
+        } else {
+            highlighted += ' ';
+
+        }
+
+
+
+
     }
-   
+    showSentenceElem.innerHTML = highlighted;
+
 })
-
-
