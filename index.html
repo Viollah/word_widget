@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Word Widget</title>
+    <title>Words Widget</title>
+
+    <script type="text/x-template" class="templateName">
+        {{#each sentence}}
+        <li class="displaySentence">
+            
+        </li>
+        {{/each}}
+    </script>
 </head>
 <body>
+
     <div class="container">
-        <header class="feedback"></header>
-        <div class="number">
-            The number of words in the sentence is:<span class="wordCount"></span>
+        <div class="row">
+            <div class="col-12">
+                <div class="col-12">
+                    <h4>The number of words in the sentence is:<div class="count"></div></h4>
+                  </div>
+               
+                <input class="input" placeholder="Enter your sentence" onfocus="this.value=''" cols="43" rows="3">
+                <br>
+                <button class="submit">Submit</button>
+                <div class="sentenceDisplay"></div>
+                <div class="lessthan5"> </div>
+                <h4>Longest word: <p class="longestWord"> </p></h4>  
+                <input type="checkbox" class="hide" value="" onclick="getWords()"> Hide all words with characters less than 5
             </div>
+            
 
-        <input type="text" class="sentence" placeholder="Enter your sentence">
-        <br>
-        <button class="submitBtn">SUBMIT</button>
-        <ul class="showSentence"></ul>
+        </div>
+        <!-- <div class="row">
+            <div class="col-11">
+                <h2>Local storage</h2>
+                <div class="last5sentences" ></div>
+            </div>
         
-       <br>
-       
-        <input type="checkbox" name="hide" id="hide" onclick="myFunction()">
-       <label for="myCheck">Hide words with characters less then 5</label>  
-       
-       <!-- <p id="text" style="display:none">Checkbox is CHECKED!</p> -->
+        </div> -->
 
-        
-     
     </div>
-    <script src="wordCount.js"></script>
+
     <script src="app.js"></script>
     
 </body>
