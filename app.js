@@ -47,7 +47,7 @@ function getWords() {
             longestInString = sentenceSplit[i];
         }
     }
-    // longest.innerHTML = `<markLongest>${longestInString}</markLongest>`;
+
     let longestWordArray = sentenceSplit.filter( (word) => {
         return word.length == longestInString.length
     })
