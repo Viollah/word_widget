@@ -8,7 +8,6 @@ const longerThan5 = document.querySelector(".longerThan5")
 const lessthan5 = document.querySelector(".lessthan5")
 const displaySentence = document.querySelector(".last5sentences");
 
-
 var templateSource = document.querySelector(".templateName").innerHTML;
 
 var userTemplate = Handlebars.compile(templateSource);
@@ -27,14 +26,12 @@ function getWords() {
             return word 
     })
     
-    
-    let newSentence = ""
+   let newSentence = ""
     for(i=0; i<highlightedSentence.length; i++){
         newSentence+= highlightedSentence[i] + " " 
     }
     
- 
-    let wordCount = sentence.split(" ").length
+  let wordCount = sentence.split(" ").length
    
     count.innerHTML = wordCount
 
@@ -57,8 +54,7 @@ function getWords() {
    
     longest.innerHTML = `<markLongest>${longestWordArray}</markLongest>`
     
- 
-    if(checkBox.checked === true){
+  if(checkBox.checked === true){
         const wordsLongerThan5 = wordsArray.map(word => {
             if (word.length >= 5) {
                 return `<mark>${word}</mark>` 
@@ -74,8 +70,6 @@ function getWords() {
         display.innerHTML = newSentence
     }
 
-    
-  
     if(lastEnteredSentenceArray.length < 5){
         if(!lastEnteredSentenceArray.includes(sentence)){
             lastEnteredSentenceArray.push(sentence)
@@ -88,7 +82,6 @@ function getWords() {
   
     displaySentence.innerHTML = `${lastEnteredSentenceArray} `
 
-    
 }
 submitBtn.addEventListener('click', getWords)
 
