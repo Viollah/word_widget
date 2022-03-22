@@ -114,7 +114,7 @@ p {
   font-weight: 700;
 }
 
-/* POSITIONING */
+
 
 .left {
   text-align: left;
@@ -134,7 +134,7 @@ p {
   text-align: justify;
 }
 
-/* ==== GRID SYSTEM ==== */
+
 
 .container {
   
@@ -245,13 +245,13 @@ p {
   display: none;
 }
 
-@media only screen and (min-width: 33.75em) {  /* 540px */
+@media only screen and (min-width: 33.75em) { 
   .container {
     width: 80%;
   }
 }
 
-@media only screen and (min-width: 45em) {  /* 720px */
+@media only screen and (min-width: 45em) { 
   .col-1 {
     width: 4.33%;
   }
@@ -305,7 +305,7 @@ p {
   }
 }
 
-@media only screen and (min-width: 60em) { /* 960px */
+@media only screen and (min-width: 60em) { 
   .container {
     width: 75%;
     max-width: 60rem;

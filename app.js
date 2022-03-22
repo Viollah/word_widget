@@ -8,9 +8,9 @@ const longerThan5 = document.querySelector(".longerThan5")
 const lessthan5 = document.querySelector(".lessthan5")
 const displaySentence = document.querySelector(".last5sentences");
 
-// get a reference to the template script tag
+
 var templateSource = document.querySelector(".templateName").innerHTML;
-// compile the template
+
 var userTemplate = Handlebars.compile(templateSource);
 
 let wordsArray = []
@@ -18,8 +18,9 @@ let lastEnteredSentenceArray = []
 
 function getWords() {
     const sentence = getSentence.value
+    const punction= /[.:;,?!"'~[\]{}()<>/@#$%^&*=+_-]/g
 
-    wordsArray = sentence.trim().split(" ");
+    wordsArray = sentence.trim().replaceAll(punction,'').split(" ");
     const highlightedSentence = wordsArray.map(word => {
         if (word.length > 4) 
         { return `<mark>${word}</mark>` }
@@ -32,13 +33,13 @@ function getWords() {
         newSentence+= highlightedSentence[i] + " " 
     }
     
-    //word Count display
+ 
     let wordCount = sentence.split(" ").length
    
     count.innerHTML = wordCount
 
-    //Longest word
-    let sentenceSplit = sentence.split(' ');
+    
+    let sentenceSplit = sentence.replaceAll(punction,'').split(' ');
     let longestWord = 0;
     let longestInString = ""
     for(var i = 0; i < sentenceSplit.length; i++){
@@ -49,13 +50,14 @@ function getWords() {
     }
 
     let longestWordArray = sentenceSplit.filter( (word) => {
-        return word.length == longestInString.length
+         return word.length == longestInString.length
+  
     })
     console.log(longestWordArray);
    
     longest.innerHTML = `<markLongest>${longestWordArray}</markLongest>`
     
-    //Checkbox
+ 
     if(checkBox.checked === true){
         const wordsLongerThan5 = wordsArray.map(word => {
             if (word.length >= 5) {
@@ -73,7 +75,7 @@ function getWords() {
     }
 
     
-    //Keep track of the last 5 sentences enetred
+  
     if(lastEnteredSentenceArray.length < 5){
         if(!lastEnteredSentenceArray.includes(sentence)){
             lastEnteredSentenceArray.push(sentence)
