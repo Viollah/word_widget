@@ -1,52 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Word Widget</title>
-
-    <script type="text/x-template" class="templateName">
-        {{#each sentence}}
-        <li class="displaySentence">
-            
-        </li>
-        {{/each}}
-    </script>
+	<title>widget</title>
 </head>
 <body>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="col-12">
-                    <h4>The number of words in the sentence is:<div class="count"></div></h4>
-                  </div>
-               
-                <input class="input" placeholder="Enter your sentence" onfocus="this.value=''" cols="43" rows="3">
-                <br>
-                <button class="submit">Submit</button>
-                <div class="sentenceDisplay"></div>
-                <div class="lessthan5"> </div>
-                <h4>Longest word: <p class="longestWord"> </p></h4>  
-                <input type="checkbox" class="hide" value="" onclick="getWords()"> Hide all words with characters less than 5
-            </div>
-            
+	<div class="container">
+		<div>
+		<input type="text" class="sentence" placeholder="Enter Sentence Here">
+		<button class="btn analyze">Analyze</button>
+		<!-- <ul class="tasks">
 
-        </div>
-        <div class="row">
-            <div class="col-11">
-                <h2>Local storage</h2>
-                <div class="last5sentences" ></div>
-            </div>
-        
-        </div>
+		</ul> -->
+		</div>
+		
+		<div>
+			<input type="checkbox" class="longerThanFour" value="selected">Show Words Longer Than 4 characters Long.
+		</div>
+		<div class="words">
+			
+		</div>
+		<div class="">
+			Number of words in sentence: <span class="wordCount">0</span>
+		</div>
+		<!--  -->
+		<br>
+		<div class="sentences">
+			
+		</div>
+		<div class="list">
+			<h4>Sentences: </h4>
+		</div>
 
-    </div>
+		<div class="errorMessage"></div>
+		<!-- <div>
+			<h2>Todo</h2>
+			<input type="text" class="task">
+			<button class="addTask">Add Task</button>
+			<ul class="tasks">
 
-    <script src="app.js"></script>
-    
+			</ul>
+
+		</div> -->
+	</div>
+
+		<script src="app.js"></script>
+		<script src="words-dom.js"></script>
 </body>
 </html>
