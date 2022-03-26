@@ -1,54 +1,58 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
 	<title>widget</title>
 </head>
-<body>
+
+<body >
 
 	<div class="container">
-		<div>
-		<input type="text" class="sentence" placeholder="Enter Sentence Here">
-		<button class="btn analyze">Analyze</button>
-		<!-- <ul class="tasks">
-
-		</ul> -->
-		</div>
 		
+		<div class="content">
+			
+				<div class="col-12">
+			<span class="dot"></span>
+			<input type="text" class="sentence" placeholder="Enter Sentence Here">
+			<button class="btn analyze">Analyze</button>
+			<div class="slidecontainer">
+				<p>Value: <span id="demo"></span></p>
+				<input type="range" min="0" max="20" value="4" class="slider" id="myRange">
+			</div>
+		</div>
+		</div><br>
+		<div class="words">
+
+		</div><br>
 		<div>
 			<input type="checkbox" class="longerThanFour" value="selected">Show Words Longer Than 4 characters Long.
-		</div>
-		<div class="words">
-			
 		</div>
 		<div class="">
 			Number of words in sentence: <span class="wordCount">0</span>
 		</div>
+		
+		
+		
 		<!--  -->
-		<br>
-		<div class="sentences">
-			
-		</div>
-		<div class="list">
-			<h4>Sentences: </h4>
-		</div>
+		<div class="col-11">
+		<h2>LocalStorage</h2>
 
-		<div class="errorMessage"></div>
-		<!-- <div>
-			<h2>Todo</h2>
-			<input type="text" class="task">
-			<button class="addTask">Add Task</button>
-			<ul class="tasks">
+		<div class="last5sentences">
+			<ul id="previous">
 
 			</ul>
+		</div>
 
-		</div> -->
 	</div>
+	
 
-		<script src="app.js"></script>
-		<script src="words-dom.js"></script>
+	<script src="app.js"></script>
+	<script src="words-dom.js"></script>
+
 </body>
+
 </html>
